@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚀 Execution of dispatch event
+      - name: 🚀🚀 Execution of dispatch event
         run: |
           curl -L \
             -X POST \
