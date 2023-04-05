@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Test OpenAPI
   description: |-
-    My Sampe API Specification.</br>
+    Test OpenAPI Specification.</br>
     It works for me.
   termsOfService: https://www.blog.danishi.net/about/
   version: 1.0.0
