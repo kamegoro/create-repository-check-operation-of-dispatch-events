@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: My API Spec
+  title: Test OpenAPI
   description: |-
     My Sampe API Specification.</br>
     It works for me.
