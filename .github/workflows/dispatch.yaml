@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚀🚀 Execution of dispatch event
+      - name: 🚀 Execution of dispatch event
         run: |
           curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}"\
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}"\
             https://api.github.com/repos/kamegoro/manage-submodules-in-actions-dispatch/dispatches \
             -d '{"event_type":"openapi-update"}'
