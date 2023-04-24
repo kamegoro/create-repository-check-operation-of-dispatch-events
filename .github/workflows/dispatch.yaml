@@ -8,11 +8,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get GitHub API token 🔐
+        id: get-github-token
+        uses: getsentry/action-github-app-token@v1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: 🚀 Execution of dispatch event
         run: |
           curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}"\
+            -H "Authorization: Bearer ${{ steps.get-github-token.outputs.token }}"\
             https://api.github.com/repos/kamegoro/manage-submodules-in-actions-dispatch/dispatches \
             -d '{"event_type":"openapi-update"}'
