@@ -7,10 +7,23 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [18]
+
     steps:
+      - name: Setup node 🏗
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Put node version 📺
+        shell: bash
+        run: echo "The version of Node.js used is $(node -v)"
+
       - name: Get GitHub API token 🔐
         id: get-github-token
-        uses: getsentry/action-github-app-token@v1
+        uses: getsentry/action-github-app-token@v2
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
