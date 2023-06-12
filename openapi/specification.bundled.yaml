@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Test OpenAPI
   description: |-
-    Test OpenAPI Specification.</br>
+    Test OpenAPI Specification.
     It works.
   termsOfService: https://www.blog.danishi.net/about/
   version: 1.0.0
